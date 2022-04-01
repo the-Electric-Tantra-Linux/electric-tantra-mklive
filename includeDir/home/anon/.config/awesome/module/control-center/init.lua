@@ -84,11 +84,20 @@ local fortune = require("widget.control-center.fortune")
 local bar_button = require("widget.control-center.buttons.bar-button")
 local do_not_disturb = require("widget.control-center.buttons.do-not-disturb")
 local dropbox = require("widget.control-center.buttons.dropbox-toggle")
+local bookmarks = require("widget.control-center.bookmarks")
+local mute = require("widget.control-center.buttons.mute-button")
+local restart = require("widget.control-center.buttons.restart-awesome")
+local screen_capture = require("widget.control-center.buttons.screen-capture")
+local urls = require("widget.control-center.urls")
 
+local url_boxed = create_boxed_widget(urls, dpi(400), dpi(300), "#00000000")
+local screen_capture_boxed = create_boxed_widget(screen_capture, dpi(120), dpi(120), beautiful.bg_normal)
+local restart_boxed = create_boxed_widget(restart, dpi(120), dpi(120), beautiful.bg_normal)
+local mute_button_boxed = create_boxed_widget(mute, dpi(120), dpi(120), beautiful.bg_normal)
 local bar_button_boxed = create_boxed_widget(bar_button, dpi(120), dpi(120), beautiful.bg_normal)
 local do_not_disturb_boxed = create_boxed_widget(do_not_disturb, dpi(120), dpi(120), beautiful.bg_normal)
 local dropbox_boxed = create_boxed_widget(dropbox, dpi(120), dpi(120), beautiful.bg_normal)
-
+local bookmarks_boxed = create_boxed_widget(bookmarks, dpi(400), dpi(200), beautiful.bg_normal)
 local fortune_boxed = create_boxed_widget(fortune, dpi(450), dpi(300), beautiful.bg_normal)
 local network_boxed = create_boxed_widget(network, dpi(450), dpi(650), beautiful.bg_normal)
 local end_session_boxed = create_boxed_widget(end_session, dpi(200), dpi(120), beautiful.bg_normal)
@@ -272,17 +281,25 @@ control_center:setup {
             do_not_disturb_boxed,
             dropbox_boxed
           },
-          bluetooth_boxed,
+          {
+            layout = wibox.layout.fixed.horizontal,
+            mute_button_boxed,
+            restart_boxed,
+            spacing = dpi(20),
+            screen_capture_boxed
+          },
+          bookmarks_boxed,
           layout = wibox.layout.fixed.vertical
         },
-        -- {
-        --   layout = wibox.layout.fixed.vertical
-        -- },
+        {
+          layout = wibox.layout.fixed.vertical,
+          url_boxed,
+          bluetooth_boxed
+        },
         layout = wibox.layout.fixed.horizontal
       },
       {
-        -- notifs_boxed,
-        layout = wibox.layout.fixed.horizontal
+        layout = wibox.layout.fixed.vertical
       },
       layout = wibox.layout.fixed.vertical
     },

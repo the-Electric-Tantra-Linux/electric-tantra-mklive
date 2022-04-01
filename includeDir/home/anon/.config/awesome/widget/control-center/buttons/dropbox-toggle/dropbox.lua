@@ -20,8 +20,8 @@ local dropbox_status_blank = widget_dir .. "dropboxstatus-blank.png"
 local dropbox_status_busy2 = widget_dir .. "dropboxstatus-busy2.png"
 local dropbox_status_busy1 = widget_dir .. "dropboxstatus-busy1.png"
 local dropbox_status_idle = widget_dir .. "dropboxstatus-idle.png"
-local dropbox_status_logo = widget_dir .. "dropboxstatus-logo.png"
-local dropbox_status_x = widget_dir .. "dropboxstatus-x.png"
+local dropbox_status_logo = widget_dir .. "dropbox.svg"
+local dropbox_status_x = widget_dir .. "dropbox-x.svg"
 local dropbox_loading_icon = dropbox_status_busy1
 local dropbox_number = 1
 -- ------------------------------------------------- --
