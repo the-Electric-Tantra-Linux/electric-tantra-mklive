@@ -14,7 +14,7 @@ RUN apk add ca-certificates curl && \
 
 # 2) using void to generate the final build
 FROM scratch as stage1
-ARG REPOSITORY=https://alpha.de.repo.voidlinux.org
+ARG REPOSITORY=https://mirror.clarkson.edu/voidlinux/
 ARG ARCH=x86_64
 ARG BASEPKG=base-minimal
 COPY --from=stage0 /target /

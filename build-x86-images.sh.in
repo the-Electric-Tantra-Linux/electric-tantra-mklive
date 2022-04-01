@@ -7,7 +7,7 @@ while getopts "a:b:hr:" opt; do
 case $opt in
 	a) ARCH="$OPTARG";;
 	b) IMAGE="$OPTARG";;
-	h) echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt] [-r repo]" >&2; exit 1;;
+	h) echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt|awesome] [-r repo]" >&2; exit 1;;
 	r) REPO="-r $OPTARG $REPO";;
 esac
 done
@@ -16,15 +16,16 @@ shift $((OPTIND - 1))
 : ${ARCH:=$(uname -m)}
 
 readonly DATE=$(date +%Y%m%d)
-readonly BASE_IMG=void-live-${ARCH}-${DATE}.iso
-readonly E_IMG=void-live-${ARCH}-${DATE}-enlightenment.iso
-readonly XFCE_IMG=void-live-${ARCH}-${DATE}-xfce.iso
-readonly MATE_IMG=void-live-${ARCH}-${DATE}-mate.iso
-readonly CINNAMON_IMG=void-live-${ARCH}-${DATE}-cinnamon.iso
-readonly GNOME_IMG=void-live-${ARCH}-${DATE}-gnome.iso
-readonly KDE_IMG=void-live-${ARCH}-${DATE}-kde.iso
-readonly LXDE_IMG=void-live-${ARCH}-${DATE}-lxde.iso
-readonly LXQT_IMG=void-live-${ARCH}-${DATE}-lxqt.iso
+readonly BASE_IMG=electric-tantra-linux-live-${ARCH}-${DATE}.iso
+readonly E_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-enlightenment.iso
+readonly XFCE_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-xfce.iso
+readonly MATE_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-mate.iso
+readonly CINNAMON_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-cinnamon.iso
+readonly GNOME_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-gnome.iso
+readonly KDE_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-kde.iso
+readonly LXDE_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-lxde.iso
+readonly LXQT_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-lxqt.iso
+readonly AWESOME_IMG=electric-tantra-linux-live-${ARCH}-${DATE}-awesome.iso
 
 readonly GRUB="grub-i386-efi grub-x86_64-efi"
 
@@ -38,7 +39,7 @@ readonly GNOME_PKGS="$X_PKGS gnome gnome-terminal firefox-esr"
 readonly KDE_PKGS="$X_PKGS kde5 konsole firefox dolphin"
 readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
-
+readonly AWESOME_PKGS="$XFCE_PKGS awesome-git pamixer lm_sensors free upower i3lock-fancy speedtest-cli xclip rofi inotify-tools light xautolock kitty luasocket bluetoothctl blueman  rofi-devel libnotify libnotify-devel libXScrnSaver-devel ruby-asciidoctor xcb-util-xrm-devel startup-notification-devel xcb-util-keysyms xcb-util-keysyms-devel xcb-util-cursor-devel xcb-util-cursor xcb-util-wm-devel startup-tools libxdg-basedir-devel luarocks gettext gettext-devel zathura zathura-cb zathura-devel zathura-pdf-mupdf zathura-ps mupdf gom gom-devel libpeas libpeas-devel lua53-cjson lua53-lgi lua53 lua-lpeg "
 [ ! -x mklive.sh ] && exit 0
 
 if [ -z "$IMAGE" -o "$IMAGE" = base ]; then
@@ -86,5 +87,10 @@ fi
 if [ "$IMAGE" = kde ]; then
 	if [ ! -e $KDE_IMG ]; then
 		./mklive.sh -a $ARCH -o $KDE_IMG -p "$KDE_PKGS" ${REPO} "$@"
+	fi
+fi
+if [ -z "$IMAGE" -o "$IMAGE" = awesome ]; then
+	if [ ! -e $AWESOME_IMG ]; then
+		./mklive.sh -a $ARCH -o $AWESOME_IMG -p "$AWESOME_PKGS" ${REPO} "$@"
 	fi
 fi
