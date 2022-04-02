@@ -4,12 +4,15 @@ ARCH=
 IMAGE=
 
 while getopts "a:b:hr:" opt; do
-case $opt in
-	a) ARCH="$OPTARG";;
-	b) IMAGE="$OPTARG";;
-	h) echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt|awesome] [-r repo]" >&2; exit 1;;
-	r) REPO="-r $OPTARG $REPO";;
-esac
+	case $opt in
+	a) ARCH="$OPTARG" ;;
+	b) IMAGE="$OPTARG" ;;
+	h)
+		echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt|awesome] [-r repo]" >&2
+		exit 1
+		;;
+	r) REPO="-r $OPTARG $REPO -r $HOME/void-packages/hostdir/binpkgs" ;;
+	esac
 done
 shift $((OPTIND - 1))
 
@@ -39,7 +42,7 @@ readonly GNOME_PKGS="$X_PKGS gnome gnome-terminal firefox-esr"
 readonly KDE_PKGS="$X_PKGS kde5 konsole firefox dolphin"
 readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
-readonly AWESOME_PKGS="$XFCE_PKGS awesome-git pamixer lm_sensors free upower i3lock-fancy speedtest-cli xclip rofi inotify-tools light xautolock kitty luasocket bluetoothctl blueman  rofi-devel libnotify libnotify-devel libXScrnSaver-devel ruby-asciidoctor xcb-util-xrm-devel startup-notification-devel xcb-util-keysyms xcb-util-keysyms-devel xcb-util-cursor-devel xcb-util-cursor xcb-util-wm-devel startup-tools libxdg-basedir-devel luarocks gettext gettext-devel zathura zathura-cb zathura-devel zathura-pdf-mupdf zathura-ps mupdf gom gom-devel libpeas libpeas-devel lua53-cjson lua53-lgi lua53 lua-lpeg "
+readonly AWESOME_PKGS="$XFCE_PKGS awesome-git picom-ibhagwan  pamixer lm_sensors free upower i3lock-fancy speedtest-cli xclip rofi inotify-tools light xautolock kitty luasocket bluetoothctl blueman  rofi-devel libnotify libnotify-devel libXScrnSaver-devel ruby-asciidoctor xcb-util-xrm-devel startup-notification-devel xcb-util-keysyms xcb-util-keysyms-devel xcb-util-cursor-devel xcb-util-cursor xcb-util-wm-devel startup-tools libxdg-basedir-devel luarocks gettext gettext-devel zathura zathura-cb zathura-devel zathura-pdf-mupdf zathura-ps mupdf gom gom-devel libpeas libpeas-devel lua53-cjson lua53-lgi lua53 lua-lpeg "
 [ ! -x mklive.sh ] && exit 0
 
 if [ -z "$IMAGE" -o "$IMAGE" = base ]; then
@@ -91,6 +94,6 @@ if [ "$IMAGE" = kde ]; then
 fi
 if [ -z "$IMAGE" -o "$IMAGE" = awesome ]; then
 	if [ ! -e $AWESOME_IMG ]; then
-		./mklive.sh -a $ARCH -o $AWESOME_IMG -p "$AWESOME_PKGS" ${REPO} "$@"
+		./mklive.sh -a $ARCH -o $AWESOME_IMG -p "$AWESOME_PKGS" ${REPO} -r "$HOME/void-packages/hostdir/binpkgs" "$@"
 	fi
 fi
