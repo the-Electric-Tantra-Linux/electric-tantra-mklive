@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 # This contains the COMPLETE list of binaries that this script needs
 # to function.  The only exception is the QEMU binary since it is not

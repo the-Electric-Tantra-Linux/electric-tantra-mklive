@@ -1,4 +1,4 @@
-GITVER := $(shell git rev-parse --short HEAD)
+ITVER := $(shell git rev-parse --short HEAD)
 VERSION = 0.22
 SHIN    += $(shell find -type f -name '*.sh.in')
 SCRIPTS += $(SHIN:.sh.in=.sh)
