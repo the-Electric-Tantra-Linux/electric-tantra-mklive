@@ -24,14 +24,13 @@ fi
 
 # Create new user and remove password. We'll use autologin by default.
 chroot ${NEWROOT} useradd -m -c $USERNAME -G audio,video,wheel -s $USERSHELL $USERNAME
-chroot ${NEWROOT} passwd -d $USERNAME >/dev/null 2>&1
 
 # Setup default root/user password (voidlinux).
 chroot ${NEWROOT} sh -c 'echo "root:electrictantra" | chpasswd -c SHA512'
 chroot ${NEWROOT} sh -c "echo "$USERNAME:electrictantra" | chpasswd -c SHA512"
 
 # Default root shell to bash.
-chroot ${NEWROOT} chsh --shell '/bin/bash' root >/dev/null
+chroot ${NEWROOT} chsh --shell '/bin/zsh' root >/dev/null
 
 # Enable sudo permission by default.
 if [ -f ${NEWROOT}/etc/sudoers ]; then
@@ -52,8 +51,4 @@ polkit.addRule(function(action, subject) {
 });
 _EOF
     chroot ${NEWROOT} chown polkitd:polkitd /etc/polkit-1/rules.d/void-live.rules
-fi
-
-if [ -n "$AUTOLOGIN" ]; then
-    sed -i "s,GETTY_ARGS=\"--noclear\",GETTY_ARGS=\"--noclear -a $USERNAME\",g" ${NEWROOT}/etc/sv/agetty-tty1/conf
 fi

@@ -51,7 +51,7 @@ install() {
         inst_hook pre-udev 01 "$moddir/mtd.sh"
     fi
     inst_hook pre-pivot 01 "$moddir/adduser.sh"
-    inst_hook pre-pivot 01 "$moddir/display-manager-autologin.sh"
+    #    inst_hook pre-pivot 02 "$moddir/display-manager-autologin.sh"
     inst_hook pre-pivot 02 "$moddir/firefox-setup.sh"
     inst_hook pre-pivot 03 "$moddir/getty-serial.sh"
     inst_hook pre-pivot 04 "$moddir/locale.sh"

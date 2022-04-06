@@ -680,7 +680,7 @@ menu_useraccount() {
 
     while true; do
         _preset=$(get_option USERLOGIN)
-        [ -z "$_preset" ] && _preset="void"
+        [ -z "$_preset" ] && _preset="tantrik"
         DIALOG --inputbox "Enter a primary login name:" ${INPUTSIZE} "$_preset"
         if [ $? -eq 0 ]; then
             set_option USERLOGIN "$(cat $ANSWER)"
@@ -1349,7 +1349,7 @@ ${BOLD}Do you want to continue?${RESET}" 20 80 || return
         elif [ -n "$_dev" -a "$_type" = "static" ]; then
             # static IP through dhcpcd.
             mv $TARGETDIR/etc/dhcpcd.conf $TARGETDIR/etc/dhdpcd.conf.orig
-            echo "# Static IP configuration set by the void-installer for $_dev." \
+            echo "# Static IP configuration set by the electric-tantra-installer for $_dev." \
                 >$TARGETDIR/etc/dhcpcd.conf
             echo "interface $_dev" >>$TARGETDIR/etc/dhcpcd.conf
             echo "static ip_address=$_ip" >>$TARGETDIR/etc/dhcpcd.conf
@@ -1388,7 +1388,7 @@ ${BOLD}Do you want to continue?${RESET}" 20 80 || return
     umount_filesystems
 
     # installed successfully.
-    DIALOG --yesno "${BOLD}Void Linux has been installed successfully!${RESET}\n
+    DIALOG --yesno "${BOLD}the Electric Tantra Linux has been installed successfully!${RESET}\n
 Do you want to reboot the system?" ${YESNOSIZE}
     if [ $? -eq 0 ]; then
         shutdown -r now
@@ -1426,7 +1426,7 @@ menu() {
     if xbps-uhelper arch | grep -qe '-musl$'; then
         DIALOG --default-item $DEFITEM \
             --extra-button --extra-label "Settings" \
-            --title " Void Linux installation menu " \
+            --title " the Electric Tantra Linux installation menu " \
             --menu "$MENULABEL" 10 70 0 \
             "Keyboard" "Set system keyboard" \
             "Network" "Set up the network" \
@@ -1443,7 +1443,7 @@ menu() {
     else
         DIALOG --default-item $DEFITEM \
             --extra-button --extra-label "Settings" \
-            --title " Void Linux installation menu " \
+            --title "  the Electric Tantra Linux installation menu " \
             --menu "$MENULABEL" 10 70 0 \
             "Keyboard" "Set system keyboard" \
             "Network" "Set up the network" \
@@ -1494,7 +1494,7 @@ if ! command -v dialog >/dev/null; then
 fi
 
 if [ "$(id -u)" != "0" ]; then
-    echo "void-installer must run as root" 1>&2
+    echo "electric-tantra-installer must run as root" 1>&2
     exit 1
 fi
 
@@ -1502,11 +1502,15 @@ fi
 # main()
 #
 DIALOG --title "${BOLD}${RED} Enter the void ... ${RESET}" --msgbox "\n
-Welcome to the Void Linux installation. A simple and minimal \
-Linux distribution made from scratch and built from the source package tree \
-available for XBPS, a new alternative binary package system.\n\n
+Welcome to  the Electric Tantra Linux installer. This personalized distribution \
+exists to demonstrate the opinionated dotfiles of Thomas Leon Highbaugh in a reproducible\
+format. This installer makes the life of Thomas Leon Highbaugh easier in case he must reinstall \
+due to an error of his own causing or to provisioon a new system with this system. Based on \
+Void Linux, the Electric Tantra Linux uses the same package manager and kernel packages of the \
+glibc variant of Void Linux, providing the utmost speed and configurable control over the system \
+which is why it was chosen over the more popular and easy to remaster Arch Linux.\n\n
 The installation should be pretty straightforward. If you are in trouble \
-please join us at ${BOLD}#voidlinux${RESET} on ${BOLD}irc.freenode.org${RESET}.\n\n
+please file an issue on the Github repo associated with thiss project \n\n
 ${BOLD}https://www.voidlinux.org${RESET}\n\n" 16 80
 
 while true; do

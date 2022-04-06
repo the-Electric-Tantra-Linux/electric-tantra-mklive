@@ -13,10 +13,11 @@ qsudo  alsa-pipewire gstreamer1-pipewire pipewire pavucontrol dialog cryptsetup 
   libnotify-devel libXScrnSaver-devel ruby-asciidoctor xcb-util-xrm-devel startup-notification-devel xcb-util-keysyms \
   xcb-util-keysyms-devel xcb-util-cursor-devel xcb-util-cursor xcb-util-wm-devel startup-tools libxdg-basedir-devel \
   luarocks gettext gettext-devel zathura zathura-cb zathura-devel zathura-pdf-mupdf zathura-ps mupdf gom gom-devel \
-  libpeas libpeas-devel lua-cjson lgi lua53 lua-lpeg gnome-keyring lua-lpeg network-manager-applet gvfs-afc xrdb \
+  libpeas libpeas-devel lua-cjson lgi gobject-introspection libgudev libgudev-devel lua53 lua-lpeg gnome-keyring \
+  eudev eudev-libudev eudev-libudev-devel lua-lpeg network-manager-applet gvfs-afc xrdb \
   gvfs-mtp gvfs-smb udisks2 LuaJIT LuaJIT-devel xsettingsd nerd-fonts xdg-dbus-proxy xdg-desktop-portal-gtk xdg-utils \
   xdg-user-dirs-gtk android-tools android-file-transfer-linux abootimg scrcpy smali xterm perl-Pango pangox-compat \
   pangox-compat-devel pangomm pangomm-devel pango-xft cairo cairo-devel cairomm cairomm-devel goocanvas\
-   goocanvas-devel granite granite-devel busybox mdadm runit runit-void socklog sv-helper svctl vsv rundird procs procps-ng procps-ng-devel pst fzf lightdm lightdm-webkit2-greeter lightdm-webkit2-greeter lightdm-devel liblightdm-gobject liblightdm-qt5 xorg xorg-apps xorg-cf-files xorg-fonts xorg-server xorg-server-devel xorg-server-common xorg-server-xdmx xorg-server-xephyr xorg-server-xnest  xorg-utils-macros xorgproto libX11 \
-   libX11-devel libXpm libXpm-devel "
+   goocanvas-devel granite granite-devel busybox mdadm runit runit-void socklog sv-helper svctl vsv rundird procs procps-ng procps-ng-devel pst fzf lightdm lightdm-webkit2-greeter lightdm-webkit2-greeter lightdm-devel liblightdm-gobject liblightdm-qt5 xorg xorg-apps xorg-cf-files xorg-fonts xorg-server xorg-server-devel xorg-server-common xorg-server-xdmx xorg-server-xephyr xorg-server-xnest  xorgproto libX11 \
+   libX11-devel libXpm libXpm-devel pam pam-base pam-devel pam-gnupg pam-libs pam-userdb "
 ./build.sh -K -T "the Electric Tantra Linux" -p "$PACKAGES" -I rootfs -r /home/tlh/void-packages/hostdir/binpkgs
