@@ -1,7 +1,7 @@
 UI vesamenu.c32
 PROMPT 0
 TIMEOUT 100
-ONTIMEOUT linux
+ONTIMEOUT linuxram
 
 MENU TABMSG Press ENTER to boot or TAB to edit a menu entry
 MENU AUTOBOOT BIOS default device boot in # second{,s}...
@@ -17,8 +17,8 @@ MENU HELPMSGROW 16
 MENU HELPMSGENDROW 29
 
 MENU COLOR title        * #b2bfd9ff *
-MENU COLOR border       * #323643ff #323643ff #323643ff #323643ff 
-MENU COLOR sel          * #ffffffff #8b9cbeff *
+MENU COLOR border       * #8b9cbeff #8b9cbeff  #8b9cbeff 
+MENU COLOR sel          * #f4f4f7ff #555e70ff *
 
 LABEL linux
 MENU LABEL @@BOOT_TITLE@@ @@KERNVER@@ @@ARCH@@

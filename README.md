@@ -1,48 +1,19 @@
-## The Void Linux image/live/rootfs maker and installer
+# the Electric Tantra ISO Creation Environment 
+Here are the scripts you can use to build the Electric Tantra Linux's ISO file using an installation of `void-linux` and its associated package manager that leverages `dracut` to assemble the initramfs and pack all of the internals into a neat ISO file you can burn on a flash drive. 
 
-This repository contains utilities for Void Linux:
+This is based on the `cursed-mklive` project from `Cursed Linux` which while spartan in its documentation, is not dissimilar from the `void-mklive` package in that front while boasting an easier workflow and functionality than the upstream variant as it simplifies the build into two top level scripts and with a more focused set of internal files requiring modification initially that enabled a wider canvas to craft the Electric Tantra Linux upon. 
 
- * installer (The Void Linux el-cheapo installer for x86)
- * mklive    (The Void Linux live image maker for x86)
+## Dependencies
+ - **xbps**>=*0.45*
 
- * mkimage   (The Void Linux image maker for ARM platforms)
- * mkplatformfs (The Void Linux filesystem tool to produce a rootfs for a particular platform)
- * mkrootfs  (The Void Linux rootfs maker for ARM platforms)
- * mknet (Script to generate netboot tarballs for Void)
+## Usage
 
-#### Build Dependencies
- * make
+**Type:**
 
-#### Dependencies
- * Compression type for the initramfs image
-   * liblz4 (for lz4, xz) (default)
- * xbps>=0.45
- * qemu-user-static binaries (for mkrootfs)
+   ```bash 
+    $ sudo bash run.sh
+```
 
-#### Usage
+## rootfs
 
-Type
-
-    $ make
-
-and then see the usage output:
-
-    $ ./mklive.sh -h
-    $ ./mkrootfs.sh -h
-    $ ./mkimage.sh -h
-
-#### Examples
-
-Build a native live image keyboard set to 'fr':
-
-    # ./mklive.sh -k fr
-
-Build an i686 (on x86\_64) live image with some additional packages:
-
-    # ./mklive.sh -a i686 -p 'vim rtorrent'
-
-Build an x86\_64 musl live image with packages stored in a local repository:
-
-    # ./mklive.sh -a x86_64-musl -r /path/to/host/binpkgs
-
-See the usage output for more information :-)
+An inherented idiosyncracity I liked and thus kept from the `Cursed Linux` team was the included directory being called `rootfs`, which is a label better describing the directory's content to those not versed in the spartan documentation for `void-mklive` presently available. In essence, this folder contains a targeted selection of my dotfiles, modified for their employment in the context of the Live Environment, in the subdirectory `rootfs/etc/skel` which is used to populate the `anon` user's home directory. Due to this abstraction and the use of `anon` instead of my usual user name, including my dotfiles and associated repos as subdirectories makes muh 

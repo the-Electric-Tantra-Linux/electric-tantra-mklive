@@ -11,6 +11,11 @@ LOCALE=$(getarg locale.LANG)
 echo "LANG=$LOCALE" > $NEWROOT/etc/locale.conf
 echo "LC_COLLATE=C" >> $NEWROOT/etc/locale.conf
 
+# set timezone
+TIMEZONE=$(getarg vconsole.timezone)
+[ -z "$TIMEZONE" ] && TIMEZONE="UTC"
+sed -i -e "s|#TIMEZONE=.*|TIMEZONE=$TIMEZONE|g" $NEWROOT/etc/rc.conf
+
 # set keymap too.
 KEYMAP=$(getarg vconsole.keymap)
 [ -z "$KEYMAP" ] && KEYMAP="us"

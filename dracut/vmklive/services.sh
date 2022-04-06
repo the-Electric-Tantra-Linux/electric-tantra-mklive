@@ -8,13 +8,14 @@ SERVICEDIR=$NEWROOT/etc/sv
 SERVICES="$(getarg live.services)"
 
 for f in ${SERVICES}; do
-        ln -sf /etc/sv/$f $NEWROOT/etc/runit/runsvdir/default/
+    ln -sf /etc/sv/$f $NEWROOT/etc/runit/runsvdir/default/
 done
 
 dhcpcd=1
 for f in connmand NetworkManager wicd; do
     if [ -e $SERVICEDIR/$f ]; then
         unset dhcpcd
+        unset wpa_supplicant
     fi
 done
 
@@ -22,8 +23,8 @@ done
 for f in $SERVICEDIR/*; do
     _service=${f##*/}
     case "${_service}" in
-        agetty-console|agetty-generic|agetty-serial|agetty-tty[SAU]*|agetty-hv*|sulogin|dhcpcd-*|iptables|ip6tables|wpa_supplicant|pulseaudio|lvmetad|dmeventd|mdadm) ;; # ignored
-        dhcpcd) [ -n "$dhcpcd" ] && ln -sf ${f##$NEWROOT} $NEWROOT/etc/runit/runsvdir/default/;;
-        *) ln -sf ${f##$NEWROOT} $NEWROOT/etc/runit/runsvdir/default/;;
+    agetty-console | agetty-generic | agetty-serial | agetty-tty[SAU]* | sulogin | dhcpcd-* | iptables | ip6tables | pulseaudio | lvmetad | dmeventd | mdadm) ;; # ignored
+    dhcpcd) [ -n "$dhcpcd" ] && ln -sf ${f##$NEWROOT} $NEWROOT/etc/runit/runsvdir/default/ ;;
+    *) ln -sf ${f##$NEWROOT} $NEWROOT/etc/runit/runsvdir/default/ ;;
     esac
 done

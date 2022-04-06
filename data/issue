@@ -1,25 +1,5 @@
 ###############################################################################
 
-Welcome to the Electric Tantra Linux Live system. Two users are available to log in:
-
-    - root:electrictantralinux
-    - anon:electrictantralinux
-
-The `anon` user additionally has `sudo(8)` permissions to run any command
-without a password.
-
-To start the installation please type:
-
-    # electric-tantra-installer
-
-and follow the on-screen instructions. To install additional software make
-sure to configure your network interface and then use:
-
-    - xbps-install(1) to install/update packages
-    - xbps-query(1) to query for package info
-
-###############################################################################
-
     ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
     │      dBBBP  dBP    dBBBP  dBBBP dBBBBBBP dBBBBBb    dBP dBBBP     dBBBBBBP dBBBBBb     dBBBBb dBBBBBBP dBBBBBb dBBBBBb  │
     │                                              dBP                                BB        dBP              dBP      BB  │
@@ -47,3 +27,21 @@ sure to configure your network interface and then use:
     └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ###############################################################################
+
+
+In order to login, it helps to know the password: 
+ - root:electrictantra
+ - stnby:electrictantra
+ - siren:cursed (WIP)
+ - duxz:cursed (WIP)
+ - dong:cursed (WIP)
+
+
+
+
+Much gratitude to the team behind Cursed Linux.
+ - https://cursed.kernal.eu
+
+And the Void Linux community
+ - https://www.voidlinux.org
+
