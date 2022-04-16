@@ -43,14 +43,14 @@ hostname
  - inetutils-hostname (current)
   - hostname:/usr/bin/inetutils-hostname
   - hostname.1:/usr/share/man/man1/inetutils-hostname.1
- - coreutils
-  - hostname:/usr/bin/hostname-coreutils
-  - hostname.1:/usr/share/man/man1/hostname-coreutils.1
  - net-tools
   - hostname:/usr/bin/net-tools-hostname
   - /usr/share/man/man1/hostname.1:/usr/share/man/man8/net-tools-hostname.1
  - busybox
   - hostname:/usr/bin/busybox
+ - coreutils
+  - hostname:/usr/bin/hostname-coreutils
+  - hostname.1:/usr/share/man/man1/hostname-coreutils.1
 ifconfig
  - net-tools (current)
   - ifconfig:/usr/bin/net-tools-ifconfig
@@ -87,10 +87,23 @@ lua
   - luac:/usr/bin/luac5.3
   - lua.1:/usr/share/man/man1/lua5.3.1
   - luac.1:/usr/share/man/man1/luac5.3.1
+ - lua52
+  - lua:/usr/bin/lua5.2
+  - luac:/usr/bin/luac5.2
+  - lua.1:/usr/share/man/man1/lua5.2.1
+  - luac.1:/usr/share/man/man1/luac5.2.1
+ - lua54
+  - lua:/usr/bin/lua5.4
+  - luac:/usr/bin/luac5.4
+  - lua.1:/usr/share/man/man1/lua5.4.1
+  - luac.1:/usr/share/man/man1/luac5.4.1
 lua-devel
  - lua51-devel (current)
   - lua:/usr/share/doc/lua5.1
   - lua.pc:/usr/lib/pkgconfig/lua5.1.pc
+ - lua53-devel
+  - lua:/usr/share/doc/lua5.3
+  - lua.pc:/usr/lib/pkgconfig/lua5.3.pc
 luarocks
  - luarocks-lua53 (current)
   - luarocks:/usr/bin/luarocks-5.3
@@ -153,6 +166,10 @@ pkg-config
   - pkg-config:/usr/bin/pkg-config.pkg-config
   - pkg-config.1:/usr/share/man/man1/pkg-config.1.pkg-config
   - pkg.m4:/usr/share/aclocal/pkg.m4.pkg-config
+ - pkgconf
+  - pkg-config:/usr/bin/pkgconf
+  - pkg-config.1:/usr/share/man/man1/pkgconf.1
+  - pkg.m4:/usr/share/aclocal/pkg.m4.pkgconf
 python
  - python3 (current)
   - idle:/usr/bin/idle3.10

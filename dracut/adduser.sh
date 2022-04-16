@@ -4,7 +4,7 @@
 
 type getarg >/dev/null 2>&1 || . /lib/dracut-lib.sh
 
-echo electric-tantra-live >${NEWROOT}/etc/hostname
+echo theElectricTantraLive >${NEWROOT}/etc/hostname
 
 AUTOLOGIN=$(getarg live.autologin)
 USERNAME=$(getarg live.user)
