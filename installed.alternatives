@@ -1,0 +1,242 @@
+ash
+ - busybox (current)
+  - ash:/usr/bin/busybox
+awk
+ - gawk (current)
+  - awk:/usr/bin/gawk
+  - awk.1:/usr/share/man/man1/gawk.1
+ - busybox
+  - awk:/usr/bin/busybox
+ - mawk
+  - awk:/usr/bin/mawk
+  - awk.1:/usr/share/man/man1/mawk.1
+bc
+ - bc (current)
+  - bc:/usr/bin/gnu-bc
+  - bc.1:/usr/share/man/man1/gnu-bc.1
+chardet
+ - python3-chardet (current)
+  - chardetect:/usr/bin/chardetect3
+crond
+ - cronie (current)
+  - crond:/etc/sv/cronie
+  - crond:/usr/bin/cronie-crond
+  - crontab:/usr/bin/cronie-crontab
+  - crontab.1:/usr/share/man/man1/cronie-crontab.1
+  - crond.8:/usr/share/man/man8/cronie-crond.8
+dc
+ - bc (current)
+  - dc:/usr/bin/gnu-dc
+  - dc.1:/usr/share/man/man1/gnu-dc.1
+find
+ - findutils (current)
+  - find:/usr/bin/gfind
+  - find.1:/usr/share/man/man1/gfind.1
+ftp
+ - tnftp (current)
+  - ftp:/usr/bin/tnftp
+  - ftp.1:/usr/share/man/man1/tnftp.1
+ - inetutils-ftp
+  - ftp:/usr/bin/inetutils-ftp
+  - ftp.1:/usr/share/man/man1/inetutils-ftp.1
+hostname
+ - inetutils-hostname (current)
+  - hostname:/usr/bin/inetutils-hostname
+  - hostname.1:/usr/share/man/man1/inetutils-hostname.1
+ - coreutils
+  - hostname:/usr/bin/hostname-coreutils
+  - hostname.1:/usr/share/man/man1/hostname-coreutils.1
+ - net-tools
+  - hostname:/usr/bin/net-tools-hostname
+  - /usr/share/man/man1/hostname.1:/usr/share/man/man8/net-tools-hostname.1
+ - busybox
+  - hostname:/usr/bin/busybox
+ifconfig
+ - net-tools (current)
+  - ifconfig:/usr/bin/net-tools-ifconfig
+  - /usr/share/man/man1/ifconfig.1:/usr/share/man/man8/net-tools-ifconfig.8
+iptables
+ - iptables (current)
+  - ip6tables:/usr/bin/xtables-legacy-multi
+  - ip6tables-restore:/usr/bin/xtables-legacy-multi
+  - ip6tables-save:/usr/bin/xtables-legacy-multi
+  - iptables:/usr/bin/xtables-legacy-multi
+  - iptables-restore:/usr/bin/xtables-legacy-multi
+  - iptables-save:/usr/bin/xtables-legacy-multi
+ksh
+ - ksh (current)
+  - ksh:/usr/bin/ksh93
+  - ksh.1:/usr/share/man/man1/ksh93.1
+ - mksh
+  - ksh:/usr/bin/mksh
+  - ksh.1:/usr/share/man/man1/mksh.1
+logger
+ - busybox (current)
+  - logger:/usr/bin/busybox
+ - util-linux
+  - logger:/usr/bin/util-linux-logger
+  - logger.1:/usr/share/man/man1/util-linux-logger.1
+lua
+ - lua51 (current)
+  - lua:/usr/bin/lua5.1
+  - luac:/usr/bin/luac5.1
+  - lua.1:/usr/share/man/man1/lua5.1.1
+  - luac.1:/usr/share/man/man1/luac5.1.1
+ - lua53
+  - lua:/usr/bin/lua5.3
+  - luac:/usr/bin/luac5.3
+  - lua.1:/usr/share/man/man1/lua5.3.1
+  - luac.1:/usr/share/man/man1/luac5.3.1
+lua-devel
+ - lua51-devel (current)
+  - lua:/usr/share/doc/lua5.1
+  - lua.pc:/usr/lib/pkgconfig/lua5.1.pc
+luarocks
+ - luarocks-lua53 (current)
+  - luarocks:/usr/bin/luarocks-5.3
+  - luarocks-admin:/usr/bin/luarocks-admin-5.3
+ - luarocks-lua51
+  - luarocks:/usr/bin/luarocks-5.1
+  - luarocks-admin:/usr/bin/luarocks-admin-5.1
+mail
+ - s-nail (current)
+  - mail.rc:/etc/s-nail.rc
+  - mail:/usr/bin/s-nail
+  - mail.1:/usr/share/man/man1/s-nail.1
+man
+ - mdocml (current)
+  - man:/usr/bin/mandoc
+  - whatis:/usr/bin/mandoc
+  - apropos:/usr/bin/mandoc
+  - man.1:/usr/share/man/man1/mandoc-man.1
+  - whatis.1:/usr/share/man/man1/mandoc-whatis.1
+  - apropos.1:/usr/share/man/man1/mandoc-apropos.1
+nc
+ - libressl-netcat (current)
+  - nc:/usr/bin/libressl-nc
+  - nc.1:/usr/share/man/man1/libressl-nc.1
+ - openbsd-netcat
+  - nc:/usr/bin/openbsd-nc
+  - nc.1:/usr/share/man/man1/openbsd-nc.1
+ - nmap
+  - nc:/usr/bin/ncat
+  - nc.1:/usr/share/man/man1/ncat.1
+ntpd
+ - chrony (current)
+  - ntpd:/usr/bin/chronyd
+  - ntpd.8:/usr/share/man/man8/chronyd.8
+  - ntpd:/etc/sv/chronyd
+ - ntp
+  - ntpd:/usr/bin/isc-ntpd
+  - ntpd.8:/usr/share/man/man8/isc-ntpd.8
+  - ntpd:/etc/sv/isc-ntpd
+ - busybox
+  - ntpd:/usr/bin/busybox
+  - ntpd:/etc/sv/busybox-ntpd
+pax
+ - pax (current)
+  - pax:/usr/bin/paxmirabilis
+  - pax.1:/usr/share/man/man1/paxmirabilis.1
+pinentry
+ - pinentry (current)
+  - pinentry:/usr/bin/pinentry-curses
+ping
+ - iputils (current)
+  - ping:/usr/bin/iputils-ping
+  - ping.8:/usr/share/man/man8/iputils-ping.8
+ping6
+ - iputils (current)
+  - ping6:/usr/bin/iputils-ping
+  - ping6.8:/usr/share/man/man8/iputils-ping.8
+pkg-config
+ - pkg-config (current)
+  - pkg-config:/usr/bin/pkg-config.pkg-config
+  - pkg-config.1:/usr/share/man/man1/pkg-config.1.pkg-config
+  - pkg.m4:/usr/share/aclocal/pkg.m4.pkg-config
+python
+ - python3 (current)
+  - idle:/usr/bin/idle3.10
+  - 2to3:/usr/bin/2to3-3.10
+  - pydoc:/usr/bin/pydoc3.10
+  - python:/usr/bin/python3.10
+  - python.1:/usr/share/man/man1/python3.10.1
+ - python
+  - idle:/usr/bin/idle2.7
+  - 2to3:/usr/bin/2to3-2.7
+  - pydoc:/usr/bin/pydoc2.7
+  - python:/usr/bin/python2.7
+  - python.1:/usr/share/man/man1/python2.7.1
+sh
+ - dash (current)
+  - sh:/usr/bin/dash
+  - sh.1:/usr/share/man/man1/dash.1
+ - bash
+  - sh:/usr/bin/bash
+  - sh.1:/usr/share/man/man1/bash.1
+ - busybox
+  - sh:/usr/bin/busybox
+ - mksh
+  - sh:/usr/bin/lksh
+  - sh.1:/usr/share/man/man1/lksh.1
+ - yash
+  - sh:/usr/bin/yash
+  - sh.1:/usr/share/man/man1/yash.1
+tftp
+ - tftp-hpa (current)
+  - tftp:/usr/bin/tftp-hpa
+  - tftp.1:/usr/share/man/man1/tftp-hpa.1
+  - tftpd.8:/usr/share/man/man8/in.tftpd.8
+traceroute
+ - traceroute (current)
+  - traceroute:/usr/bin/linux-traceroute
+  - traceroute.8:/usr/share/man/man8/linux-traceroute.8
+vi
+ - vim-common (current)
+  - ex:/usr/bin/vim
+  - ex.1:/usr/share/man/man1/vim.1
+  - vi:/usr/bin/vim
+  - vi.1:/usr/share/man/man1/vim.1
+  - view:/usr/bin/vim
+  - view.1:/usr/share/man/man1/vim.1
+ - busybox
+  - vi:/usr/bin/busybox
+ - ex-vi
+  - ex:/usr/bin/ex-ex
+  - ex.1:/usr/share/man/man1/ex-ex.1
+  - vi:/usr/bin/ex-vi
+  - vi.1:/usr/share/man/man1/ex-vi.1
+  - view:/usr/bin/ex-vi
+  - view.1:/usr/share/man/man1/ex-vi.1
+ - neatvi
+  - ex:/usr/bin/neatex
+  - vi:/usr/bin/neatvi
+ - nvi
+  - ex:/usr/bin/nex
+  - ex.1:/usr/share/man/man1/nex.1
+  - vi:/usr/bin/nvi
+  - vi.1:/usr/share/man/man1/nvi.1
+  - view:/usr/bin/nview
+  - view.1:/usr/share/man/man1/nview.1
+ - neovim
+  - vi:/usr/bin/nvim
+  - vi.1:/usr/share/man/man1/nvim.1
+  - view:/usr/bin/nvim
+  - view.1:/usr/share/man/man1/nvim.1
+vim
+ - vim (current)
+  - vim:/usr/bin/vim-normal
+ - neovim
+  - vim:/usr/bin/nvim
+  - vim.1:/usr/share/man/man1/nvim.1
+whois
+ - whois (current)
+  - whois:/usr/bin/gwhois
+  - whois.1:/usr/share/man/man1/gwhois.1
+xargs
+ - findutils (current)
+  - xargs:/usr/bin/gxargs
+  - xargs.1:/usr/share/man/man1/gxargs.1
+yacc
+ - bison (current)
+  - yacc:/usr/bin/bison-yacc
+  - yacc.1:/usr/share/man/man1/bison-yacc.1

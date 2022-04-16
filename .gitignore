@@ -1,4 +1,4 @@
+*.img
+*.xz
 *.iso
-xbps-cache
 xbps-cachedir*
-tmp.*

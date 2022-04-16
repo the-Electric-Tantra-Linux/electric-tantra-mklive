@@ -1,0 +1,37 @@
+###############################################################################
+
+    ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    │      dBBBP  dBP    dBBBP  dBBBP dBBBBBBP dBBBBBb    dBP dBBBP     dBBBBBBP dBBBBBb     dBBBBb dBBBBBBP dBBBBBb dBBBBBb  │
+    │                                              dBP                                BB        dBP              dBP      BB  │
+    │    dBBP   dBP    dBBP   dBP      dBP     dBBBBK   dBP dBP          dBP      dBP BB   dBP dBP   dBP     dBBBBK   dBP BB  │
+    │   dBP    dBP    dBP    dBP      dBP     dBP  BB  dBP dBP          dBP      dBP  BB  dBP dBP   dBP     dBP  BB  dBP  BB  │
+    │  dBBBBP dBBBBP dBBBBP dBBBBP   dBP     dBP  dB' dBP dBBBBP       dBP      dBBBBBBB dBP dBP   dBP     dBP  dB' dBBBBBBB  │
+    └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+
+
+
+Much gratitude to the team behind HRMPF, whose work this is a derivative of.
+- https://github.com/leahneukirchen/hrmpf
+
+And the Void Linux community
+ - https://www.voidlinux.org
+
+
+Users Provisioned on This ISO:
+ 			- root:electrictantra
+ 			- anon:electrictantra
+
+Press Enter and You Will Be Logged in as the Default User (anon), 
+to use the AwesomeWM configuration, just type 
+
+$ startx
+
+and don't worry a short tutorial explaining the basic commands is provided for you!
+
+if for any reason you need root access from the console, just enter:
+
+$ su 
+
+Thanks again for using the Electric Tantra Linux!

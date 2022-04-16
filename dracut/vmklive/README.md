@@ -1,5 +1,0 @@
-# vmklive
-
-This folder populates the ISO file with scripts that it will run after it boots for the first and subsequent times. Therefore this lends itself to such things as provisioning (or dialing in your environment in ways not wholly possible in the build process). This is done in posix-based shell scripts, why posix is used and not bash I am unsure and unwilling to test to determine as the process of building only to fail while trying to do other productive tasks is a quagmire for my attention deficit disorder liable to cost me days diving down manifold rabbit holes. 
-
-The main script, the one run by the build script that runs all the rest of the scripts in this subdirectory is the `module-setup.sh` script. From here, the order and conditions of the other scripts are assigned and will be run when booting the ISO. 
